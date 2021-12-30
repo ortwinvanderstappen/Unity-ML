@@ -6,14 +6,17 @@ public class PlatformBehavior : MonoBehaviour
 {
     [SerializeField] private GameObject _platformPrefab;
     [SerializeField] private GameObject _goal;
-    [SerializeField] private int levels = 1;
     [SerializeField] private GameObject _platformsParent;
+    [SerializeField] private int levels = 1;
 
     [SerializeField] private Material successMat;
     [SerializeField] private Material failureMat;
 
     private MeshCollider _meshCollider;
     private MeshRenderer _meshRenderer;
+
+    private Platform _previousPlatform = null;
+    private Transform _debugTransform;
 
     private void Start()
     {
@@ -29,31 +32,86 @@ public class PlatformBehavior : MonoBehaviour
             GameObject.Destroy(child.gameObject);
         }
 
+        SpawnPlatforms();
+    }
+
+    private void SpawnPlatforms()
+    {
         const float heightIncrement = 2f;
         float currentHeight = 0f;
 
+        // Get size of ground plane
         Vector3 colliderExtents = _meshCollider.bounds.extents;
 
-        // Create platforms
         for (int i = 0; i < levels; ++i)
         {
             currentHeight += heightIncrement;
 
-            float randomX = Random.Range(-colliderExtents.x, colliderExtents.x);
-            float randomZ = Random.Range(-colliderExtents.z, colliderExtents.z);
+            Vector3 spawnPosition = Vector3.zero;
 
-            Vector3 spawnPosition = transform.position + new Vector3(randomX, currentHeight, randomZ);
-            GameObject platform = Instantiate(_platformPrefab, spawnPosition, Quaternion.identity);
-            platform.transform.parent = _platformsParent.transform;
+            // Find a random spawn position
+            int antiInfCounter = 0;
+            do
+            {
+                float randomX = Random.Range(-colliderExtents.x, colliderExtents.x);
+                float randomZ = Random.Range(-colliderExtents.z, colliderExtents.z);
+                spawnPosition = transform.position + new Vector3(randomX, currentHeight, randomZ);
+
+                ++antiInfCounter;
+                if (antiInfCounter > 20)
+                {
+                    Debug.LogError("Do while went over allowed 20 steps");
+                    return;
+                }
+            } while (!IsPlatformPositionValid(spawnPosition));
+
+            // Create platform
+            GameObject platformObject = Instantiate(_platformPrefab, spawnPosition, Quaternion.identity);
+            Platform platform = platformObject.GetComponent<Platform>();
+
+            if (_previousPlatform == null) // Debug
+                _previousPlatform = platform;
+            else
+                _debugTransform = platformObject.transform;
+
+            // Set parent for clean hierarchy
+            platformObject.transform.parent = _platformsParent.transform;
 
             // If last platform to spawn
             if (i == levels - 1)
             {
-                // Move goal
+                // Set goal on platform
                 _goal.transform.position = spawnPosition + new Vector3(0f, 1f, 0f);
-                _goal.transform.parent = platform.transform;
+                _goal.transform.parent = platformObject.transform;
             }
         }
+    }
+
+    private void Update()
+    {
+        if (_previousPlatform == null || _debugTransform == null)
+        {
+            return;
+        }
+
+        if (IsPlatformPositionValid(_debugTransform.position))
+        {
+            Debug.Log("Valid");
+        }
+        else
+        {
+            Debug.Log("Invalid");
+        }
+    }
+
+    private bool IsPlatformPositionValid(Vector3 spawnPos)
+    {
+        if (_previousPlatform == null)
+        {
+            return true;
+        }
+
+        return !_previousPlatform.IsPositionAbovePlatform(spawnPos);
     }
 
     public void SetStageSuccess(bool success)
@@ -61,7 +119,8 @@ public class PlatformBehavior : MonoBehaviour
         if (success)
         {
             _meshRenderer.sharedMaterial = successMat;
-        } else
+        }
+        else
         {
             _meshRenderer.sharedMaterial = failureMat;
         }
