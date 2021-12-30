@@ -12,67 +12,91 @@ public class PlatformBehavior : MonoBehaviour
     [SerializeField] private Material successMat;
     [SerializeField] private Material failureMat;
 
-    private MeshCollider _meshCollider;
+    [SerializeField] private float _maxPlatformDistance = 6f;
+
+    private MeshCollider _basePlatformMeshCollider;
     private MeshRenderer _meshRenderer;
 
     private Platform _previousPlatform = null;
-    private Transform _debugTransform;
+    private Queue<Platform> _previousPlatformQueue = new Queue<Platform>();
 
     private void Start()
     {
-        _meshCollider = GetComponent<MeshCollider>();
+        _basePlatformMeshCollider = GetComponent<MeshCollider>();
         _meshRenderer = GetComponent<MeshRenderer>();
     }
 
     public void CreateStage()
     {
+        _previousPlatform = null;
+
         // Remove all existing platforms
         foreach (Transform child in _platformsParent.transform)
         {
             GameObject.Destroy(child.gameObject);
         }
 
-        SpawnPlatforms();
+        StartCoroutine(SpawnPlatforms());
     }
 
-    private void SpawnPlatforms()
+    private IEnumerator SpawnPlatforms()
     {
         const float heightIncrement = 2f;
         float currentHeight = 0f;
 
-        // Get size of ground plane
-        Vector3 colliderExtents = _meshCollider.bounds.extents;
+        Vector3 pos = transform.position;
+        Vector3 extents = _basePlatformMeshCollider.bounds.extents;
 
         for (int i = 0; i < levels; ++i)
         {
-            currentHeight += heightIncrement;
+            yield return new WaitForSeconds(.1f);
 
-            Vector3 spawnPosition = Vector3.zero;
+            currentHeight += heightIncrement;
+            Vector3 spawnPosition;
 
             // Find a random spawn position
             int antiInfCounter = 0;
             do
             {
-                float randomX = Random.Range(-colliderExtents.x, colliderExtents.x);
-                float randomZ = Random.Range(-colliderExtents.z, colliderExtents.z);
-                spawnPosition = transform.position + new Vector3(randomX, currentHeight, randomZ);
+                const float margin = .5f;
+                float randomX = Random.Range(pos.x - extents.x + margin, pos.x + extents.x - margin);
+                float randomZ = Random.Range(pos.z - extents.z + margin, pos.z + extents.z - margin);
+                Vector3 randomPoint = new Vector3(randomX, currentHeight, randomZ);
 
-                ++antiInfCounter;
-                if (antiInfCounter > 20)
+                spawnPosition = transform.position + randomPoint;
+
+                if (_previousPlatform != null)
                 {
-                    Debug.LogError("Do while went over allowed 20 steps");
-                    return;
+                    Vector3 previousPlatformNoHeightDiff =
+                        new Vector3(_previousPlatform.transform.position.x, currentHeight, _previousPlatform.transform.position.z);
+
+                    Vector3 distanceVec = spawnPosition - previousPlatformNoHeightDiff;
+                    if (distanceVec.magnitude > _maxPlatformDistance)
+                    {
+                        Vector3 newDistance = distanceVec.normalized * _maxPlatformDistance;
+                        spawnPosition = previousPlatformNoHeightDiff + newDistance;
+                    }
+                }
+
+                const int maxSteps = 30;
+                ++antiInfCounter;
+                if (antiInfCounter > maxSteps)
+                {
+                    Debug.LogError("Do while went over allowed " + maxSteps + " steps");
+                    yield break;
                 }
             } while (!IsPlatformPositionValid(spawnPosition));
 
             // Create platform
             GameObject platformObject = Instantiate(_platformPrefab, spawnPosition, Quaternion.identity);
             Platform platform = platformObject.GetComponent<Platform>();
+            _previousPlatform = platform;
 
-            if (_previousPlatform == null) // Debug
-                _previousPlatform = platform;
-            else
-                _debugTransform = platformObject.transform;
+            _previousPlatformQueue.Enqueue(platform);
+            if (_previousPlatformQueue.Count > 2)
+            {
+                _previousPlatformQueue.Dequeue();
+            }
 
             // Set parent for clean hierarchy
             platformObject.transform.parent = _platformsParent.transform;
@@ -87,23 +111,6 @@ public class PlatformBehavior : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (_previousPlatform == null || _debugTransform == null)
-        {
-            return;
-        }
-
-        if (IsPlatformPositionValid(_debugTransform.position))
-        {
-            Debug.Log("Valid");
-        }
-        else
-        {
-            Debug.Log("Invalid");
-        }
-    }
-
     private bool IsPlatformPositionValid(Vector3 spawnPos)
     {
         if (_previousPlatform == null)
@@ -111,7 +118,23 @@ public class PlatformBehavior : MonoBehaviour
             return true;
         }
 
-        return !_previousPlatform.IsPositionAbovePlatform(spawnPos);
+        bool isAbovePreviousPlatforms = false;
+        foreach (Platform p in _previousPlatformQueue)
+        {
+            if (p.IsPositionAbovePlatform(spawnPos))
+            {
+                isAbovePreviousPlatforms = true;
+            }
+        }
+
+        // The platform should be above the base platform and not directly above the previous platform
+        return IsAboveBasePlatform(spawnPos) && !isAbovePreviousPlatforms;
+    }
+
+    private bool IsAboveBasePlatform(Vector3 pos)
+    {
+        Ray ray = new Ray(pos, Vector3.down);
+        return _basePlatformMeshCollider.bounds.IntersectRay(ray);
     }
 
     public void SetStageSuccess(bool success)
