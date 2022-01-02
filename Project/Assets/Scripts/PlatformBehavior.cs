@@ -29,6 +29,7 @@ public class PlatformBehavior : MonoBehaviour
     public void CreateStage()
     {
         _previousPlatform = null;
+        _previousPlatformQueue.Clear();
 
         // Remove all existing platforms
         foreach (Transform child in _platformsParent.transform)
@@ -36,40 +37,37 @@ public class PlatformBehavior : MonoBehaviour
             GameObject.Destroy(child.gameObject);
         }
 
-        StartCoroutine(SpawnPlatforms());
+        SpawnPlatforms();
     }
 
-    private IEnumerator SpawnPlatforms()
+    private void SpawnPlatforms()
     {
         const float heightIncrement = 2f;
         float currentHeight = 0f;
-
-        Vector3 pos = transform.position;
+        Vector3 pos = transform.localPosition;
         Vector3 extents = _basePlatformMeshCollider.bounds.extents;
 
         for (int i = 0; i < levels; ++i)
         {
-            yield return new WaitForSeconds(.1f);
-
             currentHeight += heightIncrement;
             Vector3 spawnPosition;
-
-            // Find a random spawn position
             int antiInfCounter = 0;
+
+            // Find a random spawn position until it is valid
             do
             {
+                // Calculate a random spawn position
                 const float margin = .5f;
                 float randomX = Random.Range(pos.x - extents.x + margin, pos.x + extents.x - margin);
                 float randomZ = Random.Range(pos.z - extents.z + margin, pos.z + extents.z - margin);
                 Vector3 randomPoint = new Vector3(randomX, currentHeight, randomZ);
-
                 spawnPosition = transform.position + randomPoint;
 
                 if (_previousPlatform != null)
                 {
-                    Vector3 previousPlatformNoHeightDiff =
-                        new Vector3(_previousPlatform.transform.position.x, currentHeight, _previousPlatform.transform.position.z);
-
+                    // Make sure platform cannot be too far away (max jump distance)
+                    Vector3 prevPlatformPos = _previousPlatform.transform.localPosition;
+                    Vector3 previousPlatformNoHeightDiff = new Vector3(prevPlatformPos.x, currentHeight, prevPlatformPos.z);
                     Vector3 distanceVec = spawnPosition - previousPlatformNoHeightDiff;
                     if (distanceVec.magnitude > _maxPlatformDistance)
                     {
@@ -78,13 +76,15 @@ public class PlatformBehavior : MonoBehaviour
                     }
                 }
 
+                // Notify when randomized platform was invalid 30 times in a row and abort
                 const int maxSteps = 30;
                 ++antiInfCounter;
                 if (antiInfCounter > maxSteps)
                 {
                     Debug.LogError("Do while went over allowed " + maxSteps + " steps");
-                    yield break;
+                    return;
                 }
+
             } while (!IsPlatformPositionValid(spawnPosition));
 
             // Create platform
@@ -101,19 +101,17 @@ public class PlatformBehavior : MonoBehaviour
             // Set parent for clean hierarchy
             platformObject.transform.parent = _platformsParent.transform;
 
-            // If last platform to spawn
+            // Set goal on last platform
             if (i == levels - 1)
             {
-                // Set goal on platform
                 _goal.transform.position = spawnPosition + new Vector3(0f, 1f, 0f);
-                _goal.transform.parent = platformObject.transform;
             }
         }
     }
 
     private bool IsPlatformPositionValid(Vector3 spawnPos)
     {
-        if (_previousPlatform == null)
+        if (_previousPlatform == null || _previousPlatformQueue.Count == 0)
         {
             return true;
         }
