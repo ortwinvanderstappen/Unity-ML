@@ -29,10 +29,7 @@ public class Platform : MonoBehaviour
         Ray rayBottomLeft = new Ray(bottomLeft, Vector3.down);
         Ray rayBottomRight = new Ray(bottomRight, Vector3.down);
 
-        //Debug.DrawRay(topLeft, Vector3.down, Color.red);
-        //Debug.DrawRay(topRight, Vector3.down, Color.red);
-        //Debug.DrawRay(bottomLeft, Vector3.down, Color.red);
-        //Debug.DrawRay(bottomRight, Vector3.down, Color.red);
+        Debug.Log("Bounds: " + b.center + " platform: " + transform.position + " pos: " + pos);
 
         return b.IntersectRay(rayTopleft) || b.IntersectRay(rayTopRight)
             || b.IntersectRay(rayBottomLeft) || b.IntersectRay(rayBottomRight);

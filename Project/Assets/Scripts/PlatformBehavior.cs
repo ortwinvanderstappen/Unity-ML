@@ -44,7 +44,6 @@ public class PlatformBehavior : MonoBehaviour
     {
         const float heightIncrement = 2f;
         float currentHeight = 0f;
-        Vector3 pos = transform.localPosition;
         Vector3 extents = _basePlatformMeshCollider.bounds.extents;
 
         for (int i = 0; i < levels; ++i)
@@ -58,15 +57,15 @@ public class PlatformBehavior : MonoBehaviour
             {
                 // Calculate a random spawn position
                 const float margin = .5f;
-                float randomX = Random.Range(pos.x - extents.x + margin, pos.x + extents.x - margin);
-                float randomZ = Random.Range(pos.z - extents.z + margin, pos.z + extents.z - margin);
+                float randomX = Random.Range(-extents.x + margin, extents.x - margin);
+                float randomZ = Random.Range(-extents.z + margin, extents.z - margin);
                 Vector3 randomPoint = new Vector3(randomX, currentHeight, randomZ);
                 spawnPosition = transform.position + randomPoint;
 
                 if (_previousPlatform != null)
                 {
                     // Make sure platform cannot be too far away (max jump distance)
-                    Vector3 prevPlatformPos = _previousPlatform.transform.localPosition;
+                    Vector3 prevPlatformPos = _previousPlatform.transform.position;
                     Vector3 previousPlatformNoHeightDiff = new Vector3(prevPlatformPos.x, currentHeight, prevPlatformPos.z);
                     Vector3 distanceVec = spawnPosition - previousPlatformNoHeightDiff;
                     if (distanceVec.magnitude > _maxPlatformDistance)
