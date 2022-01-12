@@ -7,7 +7,8 @@ public class PlatformBehavior : MonoBehaviour
     [SerializeField] private GameObject _platformPrefab;
     [SerializeField] private GameObject _goal;
     [SerializeField] private GameObject _platformsParent;
-    [SerializeField] private int levels = 1;
+    [SerializeField] private int _minLevels = 1;
+    [SerializeField] private int _maxLevels = 1;
 
     [SerializeField] private Material successMat;
     [SerializeField] private Material failureMat;
@@ -24,6 +25,16 @@ public class PlatformBehavior : MonoBehaviour
     {
         _basePlatformMeshCollider = GetComponent<MeshCollider>();
         _meshRenderer = GetComponent<MeshRenderer>();
+
+        if(_minLevels <= 0 || _maxLevels <= 0)
+        {
+            Debug.LogError("minLevels or maxLevels cannot be lower than 0.");
+        }
+
+        if(_maxLevels < _minLevels)
+        {
+            Debug.LogError("maxLevels cannot be smaller than minLevels");
+        }
     }
 
     public void CreateStage()
@@ -46,7 +57,8 @@ public class PlatformBehavior : MonoBehaviour
         float currentHeight = 0f;
         Vector3 extents = _basePlatformMeshCollider.bounds.extents;
 
-        for (int i = 0; i < levels; ++i)
+        int platformsToSpawn = Random.Range(_minLevels, _maxLevels);
+        for (int i = 0; i < platformsToSpawn; ++i)
         {
             currentHeight += heightIncrement;
             Vector3 spawnPosition;
@@ -101,7 +113,7 @@ public class PlatformBehavior : MonoBehaviour
             platformObject.transform.parent = _platformsParent.transform;
 
             // Set goal on last platform
-            if (i == levels - 1)
+            if (i == platformsToSpawn - 1)
             {
                 _goal.transform.position = spawnPosition + new Vector3(0f, 1f, 0f);
             }

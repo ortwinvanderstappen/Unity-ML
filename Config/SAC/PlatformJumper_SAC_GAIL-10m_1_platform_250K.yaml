@@ -1,0 +1,41 @@
+behaviors:
+  PlatformJumper:
+    trainer_type: sac
+    
+    hyperparameters:
+      # Params shared between PPO and SAC
+      batch_size: 128
+      buffer_size: 2000000
+      learning_rate: 0.0003
+      learning_rate_schedule: constant
+      
+      # SAC specific params
+      buffer_init_steps: 1000
+      tau: 0.01
+      steps_per_update: 10.0
+      save_replay_buffer: false
+      init_entcoef: 0.01
+      reward_signal_steps_per_update: 10.0
+      
+    # Configuration of the neural network (common to PPO/SAC)
+    network_settings:
+      normalize: false
+      hidden_units: 512
+      num_layers: 3
+      vis_encode_type: simple
+      
+    # Environment rewards
+    reward_signals:
+      extrinsic:
+        gamma: 0.995
+        strength: 2.0
+      gail:
+        strength: 0.01
+        gamma: 0.99
+        demo_path: Demonstrations/PlatformJumper_1-platform_10m.demo
+        
+    # Trainer configurations common to all trainers
+    keep_checkpoints: 5
+    max_steps: 250000
+    time_horizon: 128
+    summary_freq: 30000
