@@ -1,0 +1,47 @@
+{
+    "PlatformJumper": {
+        "checkpoints": [
+            {
+                "steps": 499940,
+                "file_path": "results\\PlatformJumper_PPO_GAIL-10m_3-7-platform_1000K_01\\PlatformJumper\\PlatformJumper-499940.onnx",
+                "reward": -0.37999998840192956,
+                "creation_time": 1642417964.6221855,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_PPO_GAIL-10m_3-7-platform_1000K_01\\PlatformJumper\\PlatformJumper-499940.pt"
+                ]
+            },
+            {
+                "steps": 999885,
+                "file_path": "results\\PlatformJumper_PPO_GAIL-10m_3-7-platform_1000K_01\\PlatformJumper\\PlatformJumper-999885.onnx",
+                "reward": null,
+                "creation_time": 1642419232.0422342,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_PPO_GAIL-10m_3-7-platform_1000K_01\\PlatformJumper\\PlatformJumper-999885.pt"
+                ]
+            },
+            {
+                "steps": 1000013,
+                "file_path": "results\\PlatformJumper_PPO_GAIL-10m_3-7-platform_1000K_01\\PlatformJumper\\PlatformJumper-1000013.onnx",
+                "reward": null,
+                "creation_time": 1642419232.1493702,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_PPO_GAIL-10m_3-7-platform_1000K_01\\PlatformJumper\\PlatformJumper-1000013.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1000013,
+            "file_path": "results\\PlatformJumper_PPO_GAIL-10m_3-7-platform_1000K_01\\PlatformJumper.onnx",
+            "reward": null,
+            "creation_time": 1642419232.1493702,
+            "auxillary_file_paths": [
+                "results\\PlatformJumper_PPO_GAIL-10m_3-7-platform_1000K_01\\PlatformJumper\\PlatformJumper-1000013.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

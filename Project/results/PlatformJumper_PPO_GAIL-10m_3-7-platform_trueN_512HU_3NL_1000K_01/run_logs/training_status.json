@@ -1,0 +1,47 @@
+{
+    "PlatformJumper": {
+        "checkpoints": [
+            {
+                "steps": 499895,
+                "file_path": "results\\PlatformJumper_PPO_GAIL-10m_3-7-platform_trueN_512HU_3NL_1000K_01\\PlatformJumper\\PlatformJumper-499895.onnx",
+                "reward": -0.45999998319894075,
+                "creation_time": 1642420552.4210777,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_PPO_GAIL-10m_3-7-platform_trueN_512HU_3NL_1000K_01\\PlatformJumper\\PlatformJumper-499895.pt"
+                ]
+            },
+            {
+                "steps": 999886,
+                "file_path": "results\\PlatformJumper_PPO_GAIL-10m_3-7-platform_trueN_512HU_3NL_1000K_01\\PlatformJumper\\PlatformJumper-999886.onnx",
+                "reward": -0.5099999867379665,
+                "creation_time": 1642421861.349786,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_PPO_GAIL-10m_3-7-platform_trueN_512HU_3NL_1000K_01\\PlatformJumper\\PlatformJumper-999886.pt"
+                ]
+            },
+            {
+                "steps": 1000014,
+                "file_path": "results\\PlatformJumper_PPO_GAIL-10m_3-7-platform_trueN_512HU_3NL_1000K_01\\PlatformJumper\\PlatformJumper-1000014.onnx",
+                "reward": -0.5099999867379665,
+                "creation_time": 1642421861.5402508,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_PPO_GAIL-10m_3-7-platform_trueN_512HU_3NL_1000K_01\\PlatformJumper\\PlatformJumper-1000014.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1000014,
+            "file_path": "results\\PlatformJumper_PPO_GAIL-10m_3-7-platform_trueN_512HU_3NL_1000K_01\\PlatformJumper.onnx",
+            "reward": -0.5099999867379665,
+            "creation_time": 1642421861.5402508,
+            "auxillary_file_paths": [
+                "results\\PlatformJumper_PPO_GAIL-10m_3-7-platform_trueN_512HU_3NL_1000K_01\\PlatformJumper\\PlatformJumper-1000014.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

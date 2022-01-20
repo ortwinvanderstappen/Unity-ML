@@ -57,7 +57,7 @@ public class PlatformBehavior : MonoBehaviour
         float currentHeight = 0f;
         Vector3 extents = _basePlatformMeshCollider.bounds.extents;
 
-        int platformsToSpawn = Random.Range(_minLevels, _maxLevels);
+        int platformsToSpawn = Random.Range(_minLevels, _maxLevels+1);
         for (int i = 0; i < platformsToSpawn; ++i)
         {
             currentHeight += heightIncrement;
@@ -87,8 +87,8 @@ public class PlatformBehavior : MonoBehaviour
                     }
                 }
 
-                // Notify when randomized platform was invalid 30 times in a row and abort
-                const int maxSteps = 30;
+                // Notify when randomized platform was invalid x times in a row and abort
+                const int maxSteps = 100;
                 ++antiInfCounter;
                 if (antiInfCounter > maxSteps)
                 {

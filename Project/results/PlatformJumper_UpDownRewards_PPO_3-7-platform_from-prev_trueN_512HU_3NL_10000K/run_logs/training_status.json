@@ -1,0 +1,65 @@
+{
+    "PlatformJumper": {
+        "checkpoints": [
+            {
+                "steps": 8499912,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_trueN_512HU_3NL_10000K\\PlatformJumper\\PlatformJumper-8499912.onnx",
+                "reward": 0.0,
+                "creation_time": 1642572235.5081031,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_trueN_512HU_3NL_10000K\\PlatformJumper\\PlatformJumper-8499912.pt"
+                ]
+            },
+            {
+                "steps": 8999880,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_trueN_512HU_3NL_10000K\\PlatformJumper\\PlatformJumper-8999880.onnx",
+                "reward": null,
+                "creation_time": 1642573249.957799,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_trueN_512HU_3NL_10000K\\PlatformJumper\\PlatformJumper-8999880.pt"
+                ]
+            },
+            {
+                "steps": 9499947,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_trueN_512HU_3NL_10000K\\PlatformJumper\\PlatformJumper-9499947.onnx",
+                "reward": null,
+                "creation_time": 1642574265.4104035,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_trueN_512HU_3NL_10000K\\PlatformJumper\\PlatformJumper-9499947.pt"
+                ]
+            },
+            {
+                "steps": 9999926,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_trueN_512HU_3NL_10000K\\PlatformJumper\\PlatformJumper-9999926.onnx",
+                "reward": 0.0,
+                "creation_time": 1642575283.9868095,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_trueN_512HU_3NL_10000K\\PlatformJumper\\PlatformJumper-9999926.pt"
+                ]
+            },
+            {
+                "steps": 10000054,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_trueN_512HU_3NL_10000K\\PlatformJumper\\PlatformJumper-10000054.onnx",
+                "reward": 0.0,
+                "creation_time": 1642575284.1623936,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_trueN_512HU_3NL_10000K\\PlatformJumper\\PlatformJumper-10000054.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 10000054,
+            "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_trueN_512HU_3NL_10000K\\PlatformJumper.onnx",
+            "reward": 0.0,
+            "creation_time": 1642575284.1623936,
+            "auxillary_file_paths": [
+                "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_trueN_512HU_3NL_10000K\\PlatformJumper\\PlatformJumper-10000054.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

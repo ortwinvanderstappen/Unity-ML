@@ -10,6 +10,13 @@ public class GoalSeeker : Agent
 {
     [SerializeField] private Transform _goal;
     [SerializeField] private PlatformBehavior _platformBehavior;
+
+    [SerializeField] private bool _useJumpPenalty = true;
+    [SerializeField] private bool _useJumpUpReward = false;
+    [SerializeField] private bool _useJumpDownPenalty = false;
+
+    private float _startJumpHeight;
+
     private AgentMovement _agentMovement;
 
     public override void CollectObservations(VectorSensor sensor)
@@ -32,11 +39,43 @@ public class GoalSeeker : Agent
     {
         _agentMovement = GetComponent<AgentMovement>();
         _agentMovement.onJumpDelegate += OnJump;
+        _agentMovement.onLandDelegate += OnLand;
+        _agentMovement.onUnGroundDelegate += OnUnground;
     }
 
     private void OnJump()
     {
-        SetReward(-0.01f);
+        if (_useJumpPenalty)
+        {
+            SetReward(-0.01f);
+        }
+    }
+
+    private void OnLand()
+    {
+        float endJumpHeight = transform.position.y;
+        float heightDiff = endJumpHeight - _startJumpHeight;
+        const float minHeightMargin = 1f;
+
+        if (heightDiff > minHeightMargin)
+        {
+            if (_useJumpUpReward)
+            {
+                SetReward(0.05f);
+            }
+        }
+        else if (heightDiff < -minHeightMargin)
+        {
+            if (_useJumpDownPenalty)
+            {
+                SetReward(-0.05f);
+            }
+        }
+    }
+
+    private void OnUnground()
+    {
+        _startJumpHeight = transform.position.y;
     }
 
     public override void OnActionReceived(ActionBuffers actions)

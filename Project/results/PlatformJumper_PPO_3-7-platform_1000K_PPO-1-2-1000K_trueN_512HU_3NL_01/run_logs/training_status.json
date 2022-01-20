@@ -1,0 +1,47 @@
+{
+    "PlatformJumper": {
+        "checkpoints": [
+            {
+                "steps": 499965,
+                "file_path": "results\\PlatformJumper_PPO_3-7-platform_1000K_PPO-1-2-1000K_trueN_512HU_3NL_01\\PlatformJumper\\PlatformJumper-499965.onnx",
+                "reward": null,
+                "creation_time": 1642346028.5335555,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_PPO_3-7-platform_1000K_PPO-1-2-1000K_trueN_512HU_3NL_01\\PlatformJumper\\PlatformJumper-499965.pt"
+                ]
+            },
+            {
+                "steps": 999987,
+                "file_path": "results\\PlatformJumper_PPO_3-7-platform_1000K_PPO-1-2-1000K_trueN_512HU_3NL_01\\PlatformJumper\\PlatformJumper-999987.onnx",
+                "reward": 0.0,
+                "creation_time": 1642347313.8725564,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_PPO_3-7-platform_1000K_PPO-1-2-1000K_trueN_512HU_3NL_01\\PlatformJumper\\PlatformJumper-999987.pt"
+                ]
+            },
+            {
+                "steps": 1000115,
+                "file_path": "results\\PlatformJumper_PPO_3-7-platform_1000K_PPO-1-2-1000K_trueN_512HU_3NL_01\\PlatformJumper\\PlatformJumper-1000115.onnx",
+                "reward": 0.0,
+                "creation_time": 1642347314.0223484,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_PPO_3-7-platform_1000K_PPO-1-2-1000K_trueN_512HU_3NL_01\\PlatformJumper\\PlatformJumper-1000115.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1000115,
+            "file_path": "results\\PlatformJumper_PPO_3-7-platform_1000K_PPO-1-2-1000K_trueN_512HU_3NL_01\\PlatformJumper.onnx",
+            "reward": 0.0,
+            "creation_time": 1642347314.0223484,
+            "auxillary_file_paths": [
+                "results\\PlatformJumper_PPO_3-7-platform_1000K_PPO-1-2-1000K_trueN_512HU_3NL_01\\PlatformJumper\\PlatformJumper-1000115.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

@@ -29,8 +29,6 @@ public class Platform : MonoBehaviour
         Ray rayBottomLeft = new Ray(bottomLeft, Vector3.down);
         Ray rayBottomRight = new Ray(bottomRight, Vector3.down);
 
-        Debug.Log("Bounds: " + b.center + " platform: " + transform.position + " pos: " + pos);
-
         return b.IntersectRay(rayTopleft) || b.IntersectRay(rayTopRight)
             || b.IntersectRay(rayBottomLeft) || b.IntersectRay(rayBottomRight);
     }

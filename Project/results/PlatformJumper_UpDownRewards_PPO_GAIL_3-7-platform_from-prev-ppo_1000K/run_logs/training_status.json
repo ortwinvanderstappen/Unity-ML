@@ -1,0 +1,47 @@
+{
+    "PlatformJumper": {
+        "checkpoints": [
+            {
+                "steps": 499955,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_GAIL_3-7-platform_from-prev-ppo_1000K\\PlatformJumper\\PlatformJumper-499955.onnx",
+                "reward": -0.15000000596046448,
+                "creation_time": 1642439570.4465303,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_GAIL_3-7-platform_from-prev-ppo_1000K\\PlatformJumper\\PlatformJumper-499955.pt"
+                ]
+            },
+            {
+                "steps": 999886,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_GAIL_3-7-platform_from-prev-ppo_1000K\\PlatformJumper\\PlatformJumper-999886.onnx",
+                "reward": -0.05000000074505806,
+                "creation_time": 1642440796.9699817,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_GAIL_3-7-platform_from-prev-ppo_1000K\\PlatformJumper\\PlatformJumper-999886.pt"
+                ]
+            },
+            {
+                "steps": 1000014,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_GAIL_3-7-platform_from-prev-ppo_1000K\\PlatformJumper\\PlatformJumper-1000014.onnx",
+                "reward": -0.05000000074505806,
+                "creation_time": 1642440797.0771167,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_GAIL_3-7-platform_from-prev-ppo_1000K\\PlatformJumper\\PlatformJumper-1000014.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1000014,
+            "file_path": "results\\PlatformJumper_UpDownRewards_PPO_GAIL_3-7-platform_from-prev-ppo_1000K\\PlatformJumper.onnx",
+            "reward": -0.05000000074505806,
+            "creation_time": 1642440797.0771167,
+            "auxillary_file_paths": [
+                "results\\PlatformJumper_UpDownRewards_PPO_GAIL_3-7-platform_from-prev-ppo_1000K\\PlatformJumper\\PlatformJumper-1000014.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "PlatformJumper": {
+        "checkpoints": [
+            {
+                "steps": 499990,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_1-2-platform_from-prev_1000K\\PlatformJumper\\PlatformJumper-499990.onnx",
+                "reward": 0.9928571419524295,
+                "creation_time": 1642431417.808762,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_1-2-platform_from-prev_1000K\\PlatformJumper\\PlatformJumper-499990.pt"
+                ]
+            },
+            {
+                "steps": 999958,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_1-2-platform_from-prev_1000K\\PlatformJumper\\PlatformJumper-999958.onnx",
+                "reward": 0.9999999971616835,
+                "creation_time": 1642432521.7386436,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_1-2-platform_from-prev_1000K\\PlatformJumper\\PlatformJumper-999958.pt"
+                ]
+            },
+            {
+                "steps": 1000070,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_1-2-platform_from-prev_1000K\\PlatformJumper\\PlatformJumper-1000070.onnx",
+                "reward": 0.999999997290698,
+                "creation_time": 1642432521.8413153,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_1-2-platform_from-prev_1000K\\PlatformJumper\\PlatformJumper-1000070.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1000070,
+            "file_path": "results\\PlatformJumper_UpDownRewards_PPO_1-2-platform_from-prev_1000K\\PlatformJumper.onnx",
+            "reward": 0.999999997290698,
+            "creation_time": 1642432521.8413153,
+            "auxillary_file_paths": [
+                "results\\PlatformJumper_UpDownRewards_PPO_1-2-platform_from-prev_1000K\\PlatformJumper\\PlatformJumper-1000070.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

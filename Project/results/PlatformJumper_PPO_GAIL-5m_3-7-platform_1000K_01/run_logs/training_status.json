@@ -1,0 +1,47 @@
+{
+    "PlatformJumper": {
+        "checkpoints": [
+            {
+                "steps": 499961,
+                "file_path": "results\\PlatformJumper_PPO_GAIL-5m_3-7-platform_1000K_01\\PlatformJumper\\PlatformJumper-499961.onnx",
+                "reward": -0.3199999909847975,
+                "creation_time": 1642414840.4996784,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_PPO_GAIL-5m_3-7-platform_1000K_01\\PlatformJumper\\PlatformJumper-499961.pt"
+                ]
+            },
+            {
+                "steps": 999973,
+                "file_path": "results\\PlatformJumper_PPO_GAIL-5m_3-7-platform_1000K_01\\PlatformJumper\\PlatformJumper-999973.onnx",
+                "reward": -0.3049999913200736,
+                "creation_time": 1642416090.2234776,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_PPO_GAIL-5m_3-7-platform_1000K_01\\PlatformJumper\\PlatformJumper-999973.pt"
+                ]
+            },
+            {
+                "steps": 1000101,
+                "file_path": "results\\PlatformJumper_PPO_GAIL-5m_3-7-platform_1000K_01\\PlatformJumper\\PlatformJumper-1000101.onnx",
+                "reward": -0.3049999913200736,
+                "creation_time": 1642416090.3499575,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_PPO_GAIL-5m_3-7-platform_1000K_01\\PlatformJumper\\PlatformJumper-1000101.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1000101,
+            "file_path": "results\\PlatformJumper_PPO_GAIL-5m_3-7-platform_1000K_01\\PlatformJumper.onnx",
+            "reward": -0.3049999913200736,
+            "creation_time": 1642416090.3499575,
+            "auxillary_file_paths": [
+                "results\\PlatformJumper_PPO_GAIL-5m_3-7-platform_1000K_01\\PlatformJumper\\PlatformJumper-1000101.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}
