@@ -1,0 +1,65 @@
+{
+    "PlatformJumper": {
+        "checkpoints": [
+            {
+                "steps": 18499975,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_GAIL-30m_3-7-platform_from-prev-ppo_20000K\\PlatformJumper\\PlatformJumper-18499975.onnx",
+                "reward": 1.0,
+                "creation_time": 1642925319.1394157,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_GAIL-30m_3-7-platform_from-prev-ppo_20000K\\PlatformJumper\\PlatformJumper-18499975.pt"
+                ]
+            },
+            {
+                "steps": 18999897,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_GAIL-30m_3-7-platform_from-prev-ppo_20000K\\PlatformJumper\\PlatformJumper-18999897.onnx",
+                "reward": 0.924999987706542,
+                "creation_time": 1642926481.1463048,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_GAIL-30m_3-7-platform_from-prev-ppo_20000K\\PlatformJumper\\PlatformJumper-18999897.pt"
+                ]
+            },
+            {
+                "steps": 19499991,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_GAIL-30m_3-7-platform_from-prev-ppo_20000K\\PlatformJumper\\PlatformJumper-19499991.onnx",
+                "reward": 0.3666666479160388,
+                "creation_time": 1642927642.628427,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_GAIL-30m_3-7-platform_from-prev-ppo_20000K\\PlatformJumper\\PlatformJumper-19499991.pt"
+                ]
+            },
+            {
+                "steps": 19999996,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_GAIL-30m_3-7-platform_from-prev-ppo_20000K\\PlatformJumper\\PlatformJumper-19999996.onnx",
+                "reward": 0.5625000018626451,
+                "creation_time": 1642928804.9517639,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_GAIL-30m_3-7-platform_from-prev-ppo_20000K\\PlatformJumper\\PlatformJumper-19999996.pt"
+                ]
+            },
+            {
+                "steps": 20000124,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_GAIL-30m_3-7-platform_from-prev-ppo_20000K\\PlatformJumper\\PlatformJumper-20000124.onnx",
+                "reward": 0.5625000018626451,
+                "creation_time": 1642928805.061876,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_GAIL-30m_3-7-platform_from-prev-ppo_20000K\\PlatformJumper\\PlatformJumper-20000124.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 20000124,
+            "file_path": "results\\PlatformJumper_UpDownRewards_PPO_GAIL-30m_3-7-platform_from-prev-ppo_20000K\\PlatformJumper.onnx",
+            "reward": 0.5625000018626451,
+            "creation_time": 1642928805.061876,
+            "auxillary_file_paths": [
+                "results\\PlatformJumper_UpDownRewards_PPO_GAIL-30m_3-7-platform_from-prev-ppo_20000K\\PlatformJumper\\PlatformJumper-20000124.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

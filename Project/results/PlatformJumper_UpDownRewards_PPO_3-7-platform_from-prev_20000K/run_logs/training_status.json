@@ -1,0 +1,65 @@
+{
+    "PlatformJumper": {
+        "checkpoints": [
+            {
+                "steps": 18499875,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_20000K\\PlatformJumper\\PlatformJumper-18499875.onnx",
+                "reward": 0.9583333308498064,
+                "creation_time": 1642879577.0386763,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_20000K\\PlatformJumper\\PlatformJumper-18499875.pt"
+                ]
+            },
+            {
+                "steps": 18999970,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_20000K\\PlatformJumper\\PlatformJumper-18999970.onnx",
+                "reward": 1.050000000745058,
+                "creation_time": 1642880404.3559208,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_20000K\\PlatformJumper\\PlatformJumper-18999970.pt"
+                ]
+            },
+            {
+                "steps": 19499968,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_20000K\\PlatformJumper\\PlatformJumper-19499968.onnx",
+                "reward": 1.0166666309038799,
+                "creation_time": 1642881233.4066813,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_20000K\\PlatformJumper\\PlatformJumper-19499968.pt"
+                ]
+            },
+            {
+                "steps": 19999951,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_20000K\\PlatformJumper\\PlatformJumper-19999951.onnx",
+                "reward": 0.949999988079071,
+                "creation_time": 1642882060.8206458,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_20000K\\PlatformJumper\\PlatformJumper-19999951.pt"
+                ]
+            },
+            {
+                "steps": 20000079,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_20000K\\PlatformJumper\\PlatformJumper-20000079.onnx",
+                "reward": 0.949999988079071,
+                "creation_time": 1642882060.915382,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_20000K\\PlatformJumper\\PlatformJumper-20000079.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 20000079,
+            "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_20000K\\PlatformJumper.onnx",
+            "reward": 0.949999988079071,
+            "creation_time": 1642882060.915382,
+            "auxillary_file_paths": [
+                "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_20000K\\PlatformJumper\\PlatformJumper-20000079.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.27.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

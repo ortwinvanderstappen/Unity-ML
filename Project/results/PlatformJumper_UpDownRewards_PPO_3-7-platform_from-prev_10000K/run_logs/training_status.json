@@ -2,58 +2,58 @@
     "PlatformJumper": {
         "checkpoints": [
             {
-                "steps": 8499969,
-                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-8499969.onnx",
-                "reward": -0.05000000074505806,
-                "creation_time": 1642483757.8704476,
+                "steps": 17499999,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-17499999.onnx",
+                "reward": 0.9999999639888605,
+                "creation_time": 1642846124.8910468,
                 "auxillary_file_paths": [
-                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-8499969.pt"
+                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-17499999.pt"
                 ]
             },
             {
-                "steps": 8999923,
-                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-8999923.onnx",
-                "reward": 0.11249999515712261,
-                "creation_time": 1642484670.394352,
+                "steps": 17999952,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-17999952.onnx",
+                "reward": -0.10000000149011612,
+                "creation_time": 1642847056.7807322,
                 "auxillary_file_paths": [
-                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-8999923.pt"
+                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-17999952.pt"
                 ]
             },
             {
-                "steps": 9499931,
-                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-9499931.onnx",
-                "reward": 1.0,
-                "creation_time": 1642485580.2423425,
-                "auxillary_file_paths": [
-                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-9499931.pt"
-                ]
-            },
-            {
-                "steps": 9999913,
-                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-9999913.onnx",
+                "steps": 18120481,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-18120481.onnx",
                 "reward": null,
-                "creation_time": 1642486501.4794593,
+                "creation_time": 1642847287.009536,
                 "auxillary_file_paths": [
-                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-9999913.pt"
+                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-18120481.pt"
                 ]
             },
             {
-                "steps": 10000017,
-                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-10000017.onnx",
-                "reward": 0.0,
-                "creation_time": 1642486501.5662591,
+                "steps": 1499885,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-1499885.onnx",
+                "reward": -0.6249999776482582,
+                "creation_time": 1642848328.6052506,
                 "auxillary_file_paths": [
-                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-10000017.pt"
+                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-1499885.pt"
+                ]
+            },
+            {
+                "steps": 1531238,
+                "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-1531238.onnx",
+                "reward": null,
+                "creation_time": 1642848390.1423464,
+                "auxillary_file_paths": [
+                    "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-1531238.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 10000017,
+            "steps": 1531238,
             "file_path": "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper.onnx",
-            "reward": 0.0,
-            "creation_time": 1642486501.5662591,
+            "reward": null,
+            "creation_time": 1642848390.1423464,
             "auxillary_file_paths": [
-                "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-10000017.pt"
+                "results\\PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K\\PlatformJumper\\PlatformJumper-1531238.pt"
             ]
         }
     },

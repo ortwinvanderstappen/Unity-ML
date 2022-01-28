@@ -29,10 +29,10 @@ behaviors:
           vis_encode_type: simple
           memory: null
           goal_conditioning_type: hyper
-    init_path: results\PlatformJumper_UpDownRewards_PPO_1-2-platform_from-prev_1000K\PlatformJumper
+    init_path: null
     keep_checkpoints: 5
     checkpoint_interval: 500000
-    max_steps: 10000000
+    max_steps: 20000000
     time_horizon: 128
     summary_freq: 30000
     threaded: false
@@ -55,9 +55,9 @@ engine_settings:
 environment_parameters: null
 checkpoint_settings:
   run_id: PlatformJumper_UpDownRewards_PPO_3-7-platform_from-prev_10000K
-  initialize_from: PlatformJumper_UpDownRewards_PPO_1-2-platform_from-prev_1000K
+  initialize_from: null
   load_model: false
-  resume: false
+  resume: true
   force: false
   train_model: false
   inference: false
